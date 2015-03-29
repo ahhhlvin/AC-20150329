@@ -1,12 +1,12 @@
 package nyc.c4q.ac21;
 
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Capitals {
 
     /**
-     * @return
-     *   A map from names of U.S. states to names of their capitals.
+     * @return A map from names of U.S. states to names of their capitals.
      */
     public static HashMap<String, String> getCapitals() {
         HashMap<String, String> capitals = new HashMap<String, String>();
@@ -64,15 +64,27 @@ public class Capitals {
     }
 
 
-    public static void main(String[] args) {
-        // Write a program that prompts the user for the name of a state.
-        //
-        // If the user enters the name of a state, print out,
-        //   The capital of (state) is (capital).
-        //
-        // Otherwise, print out,
-        //   (name) is not a state!
+    public static String getCapital(String state) { // call a state and returns capital
 
-        // FIXME: Write this method.
+        if (getCapitals().containsKey(state)) {
+            String stateCapital = "The capital of " + state + " is " + getCapitals().get(state) + ".";
+            return stateCapital;
+        } else {
+            String error = state + " is not a state.";
+            return error;
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        //System.out.println(getCapitals());
+
+        System.out.println("Enter the name of a state: ");
+        String state = input.nextLine();
+        System.out.println(getCapital(state));
+
+
     }
 }
