@@ -28,6 +28,6 @@ public class LengthMap {
         words.add("pineapple");
         words.add("cantaloupe");
 
-        System.out.println(getLengths(words));
+        System.out.println(getLengths(words).get("banana"));
     }
 }

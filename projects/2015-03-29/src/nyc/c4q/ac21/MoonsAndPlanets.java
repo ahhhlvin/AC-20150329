@@ -61,11 +61,10 @@ public class MoonsAndPlanets {
 
     public static boolean isPlanet(String name) {
 
-        if (getNumberOfMoons().containsKey(name)) {
-            return true;
-        } else {
-            return false;
-        }
+        return (getNumberOfMoons().containsKey(name));
+
+        // don't need an 'if/then' statement beause the class is already specified as "boolean"
+
     }
 
 }
